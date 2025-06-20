@@ -10,7 +10,7 @@ import ContactSection from './sections/ContactSection';
 
 const Portfolio = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
+    <div className="min-h-screen bg-gradient-to-br from-white via-slate-50 to-blue-50">
       <Navbar />
       <main>
         <HeroSection />
