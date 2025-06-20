@@ -15,22 +15,22 @@ const HeroSection = () => {
     <section id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
       <div className="text-center max-w-4xl mx-auto">
         <div className="animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 mb-6">
             MARGARET WAMBUI
           </h1>
-          <h2 className="text-2xl md:text-3xl text-slate-300 mb-8 font-light">
+          <h2 className="text-xl sm:text-2xl md:text-3xl text-slate-300 mb-8 font-light">
             Data Science & Software Development Student
           </h2>
-          <p className="text-lg md:text-xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed px-4">
             Passionate about creating innovative solutions through data analysis and software development. 
             Currently pursuing Information Technology while building real-world applications that make a difference.
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-scale-in">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-scale-in px-4">
           <Button 
             asChild
-            className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-8 py-3 text-lg shadow-lg"
+            className="w-full sm:w-auto bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-8 py-3 text-lg shadow-lg"
           >
             <a href="https://github.com/margaretnduta" target="_blank" rel="noopener noreferrer">
               <Github className="mr-2" size={20} />
@@ -40,8 +40,7 @@ const HeroSection = () => {
           
           <Button 
             asChild
-            variant="outline"
-            className="border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-slate-900 px-8 py-3 text-lg shadow-lg"
+            className="w-full sm:w-auto bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-8 py-3 text-lg shadow-lg"
           >
             <a href="https://www.linkedin.com/in/margaretwambui12" target="_blank" rel="noopener noreferrer">
               <Linkedin className="mr-2" size={20} />
@@ -51,8 +50,7 @@ const HeroSection = () => {
 
           <Button 
             onClick={() => scrollToSection('contact')}
-            variant="outline"
-            className="border-slate-400 text-slate-300 hover:bg-slate-700 hover:text-white px-8 py-3 text-lg shadow-lg"
+            className="w-full sm:w-auto bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-8 py-3 text-lg shadow-lg"
           >
             <Mail className="mr-2" size={20} />
             Contact Me

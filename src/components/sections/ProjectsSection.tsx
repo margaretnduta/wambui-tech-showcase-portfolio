@@ -44,35 +44,35 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="projects" className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">Featured Projects</h2>
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 mb-6">Featured Projects</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto mb-8"></div>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto px-4">
             Showcasing my work in software development and database design
           </p>
         </div>
 
-        <div className="space-y-20">
+        <div className="space-y-16 sm:space-y-20">
           {projects.map((project, index) => (
             <div 
               key={project.title}
-              className={`grid lg:grid-cols-2 gap-12 items-center ${
+              className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center ${
                 index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
               }`}
             >
-              <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                <div className="bg-slate-50 p-8 rounded-xl border border-slate-200 hover:border-cyan-300 transition-all shadow-lg">
+              <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''} order-2 lg:order-none`}>
+                <div className="bg-slate-50 p-6 sm:p-8 rounded-xl border border-slate-200 hover:border-cyan-300 transition-all shadow-lg">
                   <div className="flex items-center mb-4">
                     {project.icon}
                     <div className="ml-4">
-                      <h3 className="text-2xl font-bold text-slate-800">{project.title}</h3>
+                      <h3 className="text-xl sm:text-2xl font-bold text-slate-800">{project.title}</h3>
                       <span className="text-cyan-600 text-sm font-medium">{project.category}</span>
                     </div>
                   </div>
                   
-                  <p className="text-slate-600 mb-6 leading-relaxed">
+                  <p className="text-slate-600 mb-6 leading-relaxed text-sm sm:text-base">
                     {project.description}
                   </p>
                   
@@ -82,7 +82,7 @@ const ProjectsSection = () => {
                       {project.technologies.map((tech) => (
                         <span 
                           key={tech}
-                          className="px-3 py-1 bg-cyan-50 text-cyan-700 rounded-full text-sm border border-cyan-200"
+                          className="px-3 py-1 bg-cyan-50 text-cyan-700 rounded-full text-xs sm:text-sm border border-cyan-200"
                         >
                           {tech}
                         </span>
@@ -90,10 +90,10 @@ const ProjectsSection = () => {
                     </div>
                   </div>
                   
-                  <div className="flex gap-4">
+                  <div className="flex flex-col sm:flex-row gap-4">
                     <Button 
                       asChild
-                      className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 shadow-lg"
+                      className="w-full sm:w-auto bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 shadow-lg"
                     >
                       <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                         <Github className="mr-2" size={16} />
@@ -104,7 +104,7 @@ const ProjectsSection = () => {
                     <Button 
                       asChild
                       variant="outline"
-                      className="border-cyan-500 text-cyan-600 hover:bg-cyan-50 shadow-lg"
+                      className="w-full sm:w-auto border-cyan-500 text-cyan-600 hover:bg-cyan-50 shadow-lg"
                     >
                       <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="mr-2" size={16} />
@@ -115,21 +115,21 @@ const ProjectsSection = () => {
                 </div>
               </div>
               
-              <div className={`${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
+              <div className={`${index % 2 === 1 ? 'lg:col-start-1' : ''} order-1 lg:order-none`}>
                 <div className="space-y-6">
                   <div className="bg-slate-50 rounded-xl overflow-hidden shadow-lg border border-slate-200">
                     <img 
                       src={project.image} 
                       alt={project.title}
-                      className="w-full h-64 object-cover"
+                      className="w-full h-48 sm:h-64 object-cover"
                     />
                   </div>
                   
-                  <div className="bg-slate-50 p-6 rounded-xl border border-slate-200 shadow-lg">
-                    <h4 className="text-xl font-bold text-slate-800 mb-4">Key Features:</h4>
+                  <div className="bg-slate-50 p-4 sm:p-6 rounded-xl border border-slate-200 shadow-lg">
+                    <h4 className="text-lg sm:text-xl font-bold text-slate-800 mb-4">Key Features:</h4>
                     <ul className="space-y-3">
                       {project.features.map((feature, idx) => (
-                        <li key={idx} className="text-slate-600 flex items-start">
+                        <li key={idx} className="text-slate-600 flex items-start text-sm sm:text-base">
                           <span className="text-cyan-500 mr-3 mt-1 text-lg">•</span>
                           {feature}
                         </li>
@@ -142,16 +142,16 @@ const ProjectsSection = () => {
           ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-slate-50 to-cyan-50 p-8 rounded-xl border border-slate-200 shadow-lg">
-            <h3 className="text-2xl font-bold text-cyan-600 mb-4">Want to see more?</h3>
-            <p className="text-slate-600 mb-6">
+        <div className="mt-12 sm:mt-16 text-center">
+          <div className="bg-gradient-to-r from-slate-50 to-cyan-50 p-6 sm:p-8 rounded-xl border border-slate-200 shadow-lg">
+            <h3 className="text-xl sm:text-2xl font-bold text-cyan-600 mb-4">Want to see more?</h3>
+            <p className="text-slate-600 mb-6 text-sm sm:text-base px-4">
               Check out my GitHub profile for more projects and contributions
             </p>
             <Button 
               asChild
               size="lg"
-              className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 shadow-lg"
+              className="w-full sm:w-auto bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 shadow-lg"
             >
               <a href="https://github.com/margaretnduta" target="_blank" rel="noopener noreferrer">
                 <Github className="mr-2" size={20} />

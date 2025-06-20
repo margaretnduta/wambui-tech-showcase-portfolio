@@ -39,58 +39,58 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-white/5">
+    <section id="contact" className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Let's Connect</h2>
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">Let's Connect</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto mb-8"></div>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto px-4">
             I'm always open to discussing new opportunities, collaborations, or just having a chat about technology
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Information */}
-          <div>
-            <h3 className="text-3xl font-bold text-white mb-8">Get In Touch</h3>
-            <p className="text-slate-300 mb-8 leading-relaxed">
+          <div className="order-2 lg:order-1">
+            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6 sm:mb-8">Get In Touch</h3>
+            <p className="text-slate-300 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base">
               Whether you have a project in mind, want to collaborate, or just want to say hello, I'd 
               love to hear from you. Drop me a message and I'll get back to you as soon as possible.
             </p>
 
-            <div className="space-y-6 mb-8">
-              <div className="flex items-center p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
-                <Mail className="text-cyan-400 mr-4" size={24} />
+            <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
+              <div className="flex items-center p-4 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
+                <Mail className="text-cyan-400 mr-4 flex-shrink-0" size={24} />
                 <div>
                   <h4 className="text-white font-medium">Email</h4>
-                  <p className="text-slate-400">margaret@example.com</p>
+                  <p className="text-slate-300 text-sm sm:text-base">margaret@example.com</p>
                 </div>
               </div>
               
-              <div className="flex items-center p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
-                <Phone className="text-cyan-400 mr-4" size={24} />
+              <div className="flex items-center p-4 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
+                <Phone className="text-cyan-400 mr-4 flex-shrink-0" size={24} />
                 <div>
                   <h4 className="text-white font-medium">Phone</h4>
-                  <p className="text-slate-400">+254 757536392</p>
+                  <p className="text-slate-300 text-sm sm:text-base">+254 757536392</p>
                 </div>
               </div>
               
-              <div className="flex items-center p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
-                <MapPin className="text-cyan-400 mr-4" size={24} />
+              <div className="flex items-center p-4 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
+                <MapPin className="text-cyan-400 mr-4 flex-shrink-0" size={24} />
                 <div>
                   <h4 className="text-white font-medium">Location</h4>
-                  <p className="text-slate-400">Nairobi, Kenya</p>
+                  <p className="text-slate-300 text-sm sm:text-base">Nairobi, Kenya</p>
                 </div>
               </div>
             </div>
 
             <div className="space-y-4">
-              <h4 className="text-xl font-bold text-white">Find me online</h4>
-              <div className="flex space-x-4">
+              <h4 className="text-lg sm:text-xl font-bold text-white">Find me online</h4>
+              <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                 <Button 
                   asChild
                   size="lg"
-                  className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600"
+                  className="w-full sm:w-auto bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600"
                 >
                   <a href="https://github.com/margaretnduta" target="_blank" rel="noopener noreferrer">
                     <Github className="mr-2" size={20} />
@@ -101,7 +101,7 @@ const ContactSection = () => {
                 <Button 
                   asChild
                   size="lg"
-                  className="bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20"
+                  className="w-full sm:w-auto bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600"
                 >
                   <a href="https://www.linkedin.com/in/margaretwambui12" target="_blank" rel="noopener noreferrer">
                     <Linkedin className="mr-2" size={20} />
@@ -113,11 +113,11 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white/5 backdrop-blur-sm p-8 rounded-xl border border-white/10">
-            <h3 className="text-2xl font-bold text-white mb-6">Send me a message</h3>
+          <div className="order-1 lg:order-2 bg-white/10 backdrop-blur-sm p-6 sm:p-8 rounded-xl border border-white/20">
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-6">Send me a message</h3>
             
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-4">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+              <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">
                     Name
