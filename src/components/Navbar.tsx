@@ -1,46 +1,49 @@
 
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
 
   const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Skills', path: '/skills' },
-    { name: 'Projects', path: '/projects' },
-    { name: 'Contact', path: '/contact' },
+    { name: 'Home', id: 'home' },
+    { name: 'About', id: 'about' },
+    { name: 'Skills', id: 'skills' },
+    { name: 'Projects', id: 'projects' },
+    { name: 'Contact', id: 'contact' },
   ];
 
-  const isActive = (path: string) => location.pathname === path;
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsOpen(false);
+    }
+  };
 
   return (
-    <nav className="fixed w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-700/50">
+    <nav className="fixed w-full z-50 bg-white/10 backdrop-blur-md border-b border-white/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <Link to="/" className="text-2xl font-bold text-cyan-400 hover:text-cyan-300 transition-colors">
+            <button 
+              onClick={() => scrollToSection('home')}
+              className="text-2xl font-bold text-white hover:text-cyan-300 transition-colors"
+            >
               MW
-            </Link>
+            </button>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <Link
+              <button
                 key={item.name}
-                to={item.path}
-                className={`px-3 py-2 text-sm font-medium transition-colors ${
-                  isActive(item.path)
-                    ? 'text-cyan-400 border-b-2 border-cyan-400'
-                    : 'text-slate-300 hover:text-cyan-400'
-                }`}
+                onClick={() => scrollToSection(item.id)}
+                className="px-3 py-2 text-sm font-medium text-white/90 hover:text-cyan-300 transition-colors"
               >
                 {item.name}
-              </Link>
+              </button>
             ))}
           </div>
 
@@ -48,7 +51,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-slate-300 hover:text-cyan-400 transition-colors"
+              className="text-white hover:text-cyan-300 transition-colors"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -58,20 +61,15 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-slate-800/95 rounded-lg mt-2">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-white/10 rounded-lg mt-2 backdrop-blur-md">
               {navItems.map((item) => (
-                <Link
+                <button
                   key={item.name}
-                  to={item.path}
-                  onClick={() => setIsOpen(false)}
-                  className={`block px-3 py-2 text-base font-medium transition-colors ${
-                    isActive(item.path)
-                      ? 'text-cyan-400 bg-slate-700/50'
-                      : 'text-slate-300 hover:text-cyan-400 hover:bg-slate-700/30'
-                  }`}
+                  onClick={() => scrollToSection(item.id)}
+                  className="block w-full text-left px-3 py-2 text-base font-medium text-white/90 hover:text-cyan-300 hover:bg-white/10 rounded transition-colors"
                 >
                   {item.name}
-                </Link>
+                </button>
               ))}
             </div>
           </div>
