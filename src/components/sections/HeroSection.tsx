@@ -12,16 +12,16 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white via-blue-50 to-cyan-50">
+    <section id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
       <div className="text-center max-w-4xl mx-auto">
         <div className="animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600 mb-6">
+          <h1 className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 mb-6">
             MARGARET WAMBUI
           </h1>
-          <h2 className="text-2xl md:text-3xl text-slate-700 mb-8 font-light">
+          <h2 className="text-2xl md:text-3xl text-slate-300 mb-8 font-light">
             Data Science & Software Development Student
           </h2>
-          <p className="text-lg md:text-xl text-slate-600 mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed">
             Passionate about creating innovative solutions through data analysis and software development. 
             Currently pursuing Information Technology while building real-world applications that make a difference.
           </p>
@@ -40,7 +40,8 @@ const HeroSection = () => {
           
           <Button 
             asChild
-            className="bg-white border-2 border-cyan-500 text-cyan-600 hover:bg-cyan-50 px-8 py-3 text-lg shadow-lg"
+            variant="outline"
+            className="border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-slate-900 px-8 py-3 text-lg shadow-lg"
           >
             <a href="https://www.linkedin.com/in/margaretwambui12" target="_blank" rel="noopener noreferrer">
               <Linkedin className="mr-2" size={20} />
@@ -50,7 +51,8 @@ const HeroSection = () => {
 
           <Button 
             onClick={() => scrollToSection('contact')}
-            className="bg-slate-100 border-2 border-slate-300 text-slate-700 hover:bg-slate-200 px-8 py-3 text-lg shadow-lg"
+            variant="outline"
+            className="border-slate-400 text-slate-300 hover:bg-slate-700 hover:text-white px-8 py-3 text-lg shadow-lg"
           >
             <Mail className="mr-2" size={20} />
             Contact Me
@@ -60,7 +62,7 @@ const HeroSection = () => {
         <Button 
           asChild
           variant="ghost" 
-          className="text-slate-500 hover:text-cyan-600 mb-8"
+          className="text-slate-400 hover:text-cyan-400 mb-8"
         >
           <a href="#" download>
             <Download className="mr-2" size={20} />
@@ -70,7 +72,7 @@ const HeroSection = () => {
 
         <div className="animate-bounce">
           <button onClick={() => scrollToSection('about')}>
-            <ChevronDown className="mx-auto text-slate-500 hover:text-cyan-600 transition-colors" size={32} />
+            <ChevronDown className="mx-auto text-slate-400 hover:text-cyan-400 transition-colors" size={32} />
           </button>
         </div>
       </div>
