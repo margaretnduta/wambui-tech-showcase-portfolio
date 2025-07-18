@@ -1,42 +1,9 @@
 
-import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Github, Linkedin, Send } from 'lucide-react';
+import React from 'react';
+import { Mail, Phone, MapPin, Github, Linkedin, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { useToast } from '@/hooks/use-toast';
 
 const ContactSection = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-  const { toast } = useToast();
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    toast({
-      title: "Message sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
-    });
-    
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
 
   return (
     <section id="contact" className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
@@ -63,7 +30,7 @@ const ContactSection = () => {
                 <Mail className="text-cyan-400 mr-4 flex-shrink-0" size={24} />
                 <div>
                   <h4 className="text-white font-medium">Email</h4>
-                  <p className="text-slate-300 text-sm sm:text-base">margaret@example.com</p>
+                  <p className="text-slate-300 text-sm sm:text-base">margaretwambui294@gmail.com</p>
                 </div>
               </div>
               
@@ -112,86 +79,37 @@ const ContactSection = () => {
             </div>
           </div>
 
-          {/* Contact Form */}
+          {/* Direct Contact Actions */}
           <div className="order-1 lg:order-2 bg-white/10 backdrop-blur-sm p-6 sm:p-8 rounded-xl border border-white/20">
-            <h3 className="text-xl sm:text-2xl font-bold text-white mb-6">Send me a message</h3>
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-6">Get in touch directly</h3>
+            <p className="text-slate-300 mb-8 leading-relaxed text-sm sm:text-base">
+              Ready to discuss your project? Contact me directly through WhatsApp or email for a quick response.
+            </p>
             
-            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">
-                    Name
-                  </label>
-                  <Input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="bg-white/10 backdrop-blur-sm border-white/20 text-white placeholder-slate-400 focus:border-cyan-400"
-                    placeholder="Your name"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">
-                    Email
-                  </label>
-                  <Input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="bg-white/10 backdrop-blur-sm border-white/20 text-white placeholder-slate-400 focus:border-cyan-400"
-                    placeholder="your.email@example.com"
-                  />
-                </div>
-              </div>
-              
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-slate-300 mb-2">
-                  Subject
-                </label>
-                <Input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  className="bg-white/10 backdrop-blur-sm border-white/20 text-white placeholder-slate-400 focus:border-cyan-400"
-                  placeholder="What's this about?"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">
-                  Message
-                </label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  rows={6}
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  className="bg-white/10 backdrop-blur-sm border-white/20 text-white placeholder-slate-400 focus:border-cyan-400"
-                  placeholder="Tell me about your project or just say hello..."
-                />
-              </div>
+            <div className="space-y-4">
+              <Button 
+                asChild
+                size="lg"
+                className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700"
+              >
+                <a href="https://wa.me/254757536392" target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="mr-2" size={20} />
+                  Message on WhatsApp
+                </a>
+              </Button>
               
               <Button 
-                type="submit" 
+                asChild
                 size="lg"
-                className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600"
+                variant="outline"
+                className="w-full border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-slate-900"
               >
-                <Send className="mr-2" size={20} />
-                Send Message
+                <a href="mailto:margaretwambui294@gmail.com">
+                  <Mail className="mr-2" size={20} />
+                  Send Email
+                </a>
               </Button>
-            </form>
+            </div>
           </div>
         </div>
       </div>
